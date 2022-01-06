@@ -8,9 +8,11 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 
-import mount from '../mount';
-import Hello from './hello_react';
-mount({Hello});
+import mount from "../mount";
+import Hello from "./hello_react";
+import Books from "../Books"
+
+mount({Hello, Books});
 
 Rails.start();
 Turbolinks.start();
