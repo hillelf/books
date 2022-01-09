@@ -12,6 +12,9 @@
     "jsx": "react",
     "noEmit": true
   },
+  "incude": [
+    "app/**/*","./app/**/*.ts","./app/**/*.tsx"
+  ],
   "exclude": [
     "**/*.spec.ts",
     "node_modules",
