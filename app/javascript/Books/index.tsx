@@ -2,11 +2,15 @@ import React from 'react'
 import gql from 'graphql-tag'
 import { useQuery } from '@apollo/client'
 import { withProvider } from '../graphqlProvider'
+import { AllBooksQuery } from '../graphql/types'
+import { useAllBooksQuery } from '../graphql/types'
+
 
 const booksQuery = gql`
     query allBooks {
         books {
             title
+            id
         }
     }
 `
@@ -26,7 +30,8 @@ const Book: React.FunctionComponent = ({title}) => {
 }
 
 const Books = () => {
-    const { data, loading, error } = useQuery(booksQuery)
+    // const { data, loading, error } = useQuery<AllBooksQuery>(booksQuery)
+    const { data, loading, error } = useAllBooksQuery()
 
     if (loading) {
         return <span>"Loading..."</span>
